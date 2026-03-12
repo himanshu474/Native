@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-// Generic async hook — works with ANY service call
-// T = the type of data being fetched
+
 interface AsyncState<T> {
   data: T | null;
   loading: boolean;
@@ -28,7 +27,6 @@ export function useAsync<T>(
     } finally {
       setLoading(false);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   useEffect(() => {
